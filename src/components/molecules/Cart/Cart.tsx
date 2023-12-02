@@ -47,8 +47,8 @@ const Cart: FC = () => {
         onClick={() => setIsCartOpen(false)}
       />
       {cart.length > 0 ? (
-        <div>
-          <div className="overflow-auto max-h-96 p-4 ">
+        <div className="flex h-full justify-between flex-col">
+          <div className="overflow-auto  p-4 ">
             {cart.map((item, index) => (
               <CartCard
                 addOrDeleteHandler={(title, method) => handler(title, method)}
@@ -57,7 +57,7 @@ const Cart: FC = () => {
               />
             ))}
           </div>
-          <div className="p-4 border-t-2">
+          <div className=" p-4 mb-14 border-t-2">
             <h1 className="text-black text-lg font-medium inline-flex pb-3 ">
               Price Details
             </h1>
@@ -72,7 +72,7 @@ const Cart: FC = () => {
                   itemClassName="text-green-400"
                   value={`-₹${formatNumber(discount)}`}
                 />
-                <CartPriceCard title="Delivery Charges" value={"$80"} />
+                <CartPriceCard title="Delivery Charges" value={"₹80"} />
               </div>
               <CartPriceCard
                 className="text-gray-800 text-lg font-medium py-2"
