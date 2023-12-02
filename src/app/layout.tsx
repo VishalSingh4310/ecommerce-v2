@@ -1,4 +1,5 @@
 "use client";
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@molecules";
@@ -34,6 +35,7 @@ export default function RootLayout({
           <CartSideBar />
           <CustomToast />
           {children}
+          <Analytics />
         </CustomContext.Provider>
       </body>
     </html>
